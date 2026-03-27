@@ -20,7 +20,7 @@ Line makeLine( Point p1, Point p2){
 }
 
 Triangle makeTriangle( Point p1, Point p2, Point p3){
-    Triangle new
+    Triangle new;
     new.p[0] = p1;
     new.p[1] = p2;
     new.p[2] = p3;
