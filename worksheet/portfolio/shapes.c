@@ -20,7 +20,7 @@ Line makeLine( Point p1, Point p2){
 }
 
 Triangle makeTriangle( Point p1, Point p2, Point p3){
-    Triangle New
+    Triangle new
     new.p[0] = p1;
     new.p[1] = p2;
     new.p[2] = p3;
@@ -34,8 +34,8 @@ lineLength( Line l){
 }
 
 triangleArea( Triangle t){
-    float area = 0.5(fabs((t.p[0].x*(t.p[1].y - t.p[2].y)) + (t.p[1].x*(t.p[2].y - t.p[0].y)) + (t.p[2].x*(t.p[0].y - t.p[1].y)));
-    return are;
+    float area = 0.5(fabs((t.p[0].x*(t.p[1].y - t.p[2].y)) + (t.p[1].x*(t.p[2].y - t.p[0].y)) + (t.p[2].x*(t.p[0].y - t.p[1].y))));
+    return area;
 }
 
 samePoint( Point p1, Point p2){
