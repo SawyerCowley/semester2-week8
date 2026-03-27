@@ -27,19 +27,20 @@ Triangle makeTriangle( Point p1, Point p2, Point p3){
     return new;
 }
 
-lineLength( Line l){
+float lineLength( Line l){
     float temp = pow((l.p[0].x - l.p[1].x), 2) + pow((l.p[0].y - l.p[1].y), 2);
     temp = sqrt(temp);
     return fabs(temp);
 }
 
-triangleArea( Triangle t){
-    float area = 0.5(fabs((t.p[0].x*(t.p[1].y - t.p[2].y)) + (t.p[1].x*(t.p[2].y - t.p[0].y)) + (t.p[2].x*(t.p[0].y - t.p[1].y))));
+float triangleArea( Triangle t){
+    float area = (fabs((t.p[0].x*(t.p[1].y - t.p[2].y)) + (t.p[1].x*(t.p[2].y - t.p[0].y)) + (t.p[2].x*(t.p[0].y - t.p[1].y))));
+    area = area * 0.5;
     return area;
 }
 
-samePoint( Point p1, Point p2){
-    if((lineLength(makeLine(Point p1, Point p2))) < 1.0e-6){
+bool samePoint( Point p1, Point p2){
+    if((lineLength(makeLine(p1, p2))) < 1.0e-6){
         return true;
     }
     else{
@@ -47,12 +48,12 @@ samePoint( Point p1, Point p2){
     }
 }
 
-pointInLine( Point p, Line l){
-    return samePoint(Point p, l.p[0]) || samePoint(Point p, l.p[1]);
+bool pointInLine( Point p, Line l){
+    return samePoint(p, l.p[0]) || samePoint(p, l.p[1]);
 }
 
-pointInTriangle( Point p, Triangle t){
-    return samePoint(Point p, t.p[0]) || samePoint(Point p, t.p[1]) || samePoint(Point p, t.p[2]);
+bool pointInTriangle( Point p, Triangle t){
+    return samePoint(p,t.p[0]) || samePoint(p, t.p[1]) || samePoint(p, t.p[2]);
 }
 
 // complete other functions below
